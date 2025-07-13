@@ -1,0 +1,108 @@
+# =============================================================================
+# ENVIRONMENT VARIABLES TEMPLATE
+# =============================================================================
+# Copy this to .env.local and fill in your actual values
+# Never commit .env.local to version control
+# =============================================================================
+
+# =============================================================================
+# STACK AUTH CONFIGURATION
+# =============================================================================
+NEXT_PUBLIC_STACK_PROJECT_ID=your_stack_project_id
+NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY=your_stack_publishable_key
+STACK_SECRET_SERVER_KEY=your_stack_secret_key
+
+# =============================================================================
+# NEON DATABASE CONFIGURATION
+# =============================================================================
+# Get these from your Neon project dashboard
+NEON_DATABASE_URL=postgresql://username:password@hostname/database
+NEON_PROJECT_ID=your_neon_project_id
+
+# =============================================================================
+# STRIPE CONFIGURATION
+# =============================================================================
+# Get these from your Stripe dashboard: https://dashboard.stripe.com/apikeys
+
+# Stripe API Keys
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
+
+# Stripe Webhooks
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+
+# Stripe Product/Price IDs (create these in Stripe dashboard)
+STRIPE_BASIC_PRICE_ID=price_basic_monthly
+STRIPE_BASIC_PRICE_ID_YEARLY=price_basic_yearly
+STRIPE_PRO_PRICE_ID=price_pro_monthly
+STRIPE_PRO_PRICE_ID_YEARLY=price_pro_yearly
+
+# =============================================================================
+# APPLICATION CONFIGURATION
+# =============================================================================
+# Your application's base URL (for redirects and webhooks)
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+APP_URL=http://localhost:3000
+
+# =============================================================================
+# DEVELOPMENT/PRODUCTION SETTINGS
+# =============================================================================
+NODE_ENV=development
+
+# Success/Cancel URLs after checkout
+STRIPE_SUCCESS_URL=http://localhost:3000/upgrade/success
+STRIPE_CANCEL_URL=http://localhost:3000/upgrade
+
+# =============================================================================
+# OPTIONAL: ADDITIONAL STRIPE SETTINGS
+# =============================================================================
+# Enable/disable specific payment methods
+STRIPE_ALLOW_PROMOTION_CODES=true
+STRIPE_BILLING_ADDRESS_COLLECTION=auto
+
+# Tax settings (if using Stripe Tax)
+STRIPE_AUTOMATIC_TAX_ENABLED=false
+
+# Invoice settings
+STRIPE_INVOICE_DESCRIPTION=Subscription Payment
+
+# =============================================================================
+# SECURITY SETTINGS
+# =============================================================================
+# JWT Secret for API authentication (generate a strong random string)
+JWT_SECRET=your_jwt_secret_here
+
+# Rate limiting
+RATE_LIMIT_MAX_REQUESTS=100
+RATE_LIMIT_WINDOW_MS=900000
+
+# =============================================================================
+# EXAMPLE VALUES (DO NOT USE IN PRODUCTION)
+# =============================================================================
+# These are example values to show the format
+# Replace with your actual values from Stripe dashboard
+
+# Example Stripe Test Keys (these won't work)
+# STRIPE_SECRET_KEY=sk_test_51AbCdEfGhIjKlMnOpQrStUvWxYz
+# NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_51AbCdEfGhIjKlMnOpQrStUvWxYz
+
+# Example Webhook Secret
+# STRIPE_WEBHOOK_SECRET=whsec_1234567890abcdef
+
+# Example Price IDs
+# STRIPE_BASIC_PRICE_ID=price_1AbCdEfGhIjKlMnOpQrStUv
+# STRIPE_PRO_PRICE_ID=price_1AbCdEfGhIjKlMnOpQrStUv
+
+# =============================================================================
+# SETUP CHECKLIST
+# =============================================================================
+# [ ] Create Stripe account and get API keys
+# [ ] Create products and prices in Stripe dashboard
+# [ ] Set up webhook endpoint in Stripe dashboard
+# [ ] Configure Stack Auth project
+# [ ] Set up Neon database
+# [ ] Copy this file to .env.local
+# [ ] Fill in all required values
+# [ ] Test in development mode
+# [ ] Update production values when deploying
+# ============================================================================= 
